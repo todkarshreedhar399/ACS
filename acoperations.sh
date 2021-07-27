@@ -1,6 +1,10 @@
 #!/bin/bash -x
-read -p "Enter number a:" a
-read -p "Enter number b:" b
-read -p "Enter number c:" c
-sum=$[$a%$b+$c]
-echo "Computation(a%b+c)=$sum"
+declare -A dict
+read -p  "Enter the number of records:" num
+for ((i=0;i<$num;i++))
+do
+read -p "Enter the type of value: " key
+read -p "Enter the value: " value
+dict["$key"]="$value"
+done
+echo "${dict[@]}"
